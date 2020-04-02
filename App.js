@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native';
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState('');
@@ -13,26 +13,27 @@ export default function App() {
   };
 
   return (
-    <View style={styles.screen}>
-      <Text style={styles.carePlan}> Care Plan </Text>
-      <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="Care Plan Goal"
-          style={styles.input}
-          onChangeText={goalInputHandler}
-          value={enteredGoal}
-        />
-        <Button title="ADD" onPress={addGoalHandler} />
+    <ScrollView>
+      <View style={styles.screen}>
+        <Text style={styles.carePlan}> Care Plan </Text>
+        <View style={styles.inputContainer}>
+          <TextInput
+            placeholder="Care Plan Goal"
+            style={styles.input}
+            onChangeText={goalInputHandler}
+            value={enteredGoal}
+          />
+          <Button title="ADD" onPress={addGoalHandler} />
+        </View>
+        <ScrollView>
+          {courseGoals.map(goal => (
+            <View key={goal} style={styles.listItem}>
+              <Text>{goal}</Text>
+            </View>
+          ))}
+        </ScrollView>
       </View>
-      <View>
-        {courseGoals.map(goal => (
-          <View key={goal} style={styles.listItem}>
-            <Text>{goal}</Text>
-          </View>
-        ))}
-      </View>
-      </View>
-
+    </ScrollView>
   );
 }
 
