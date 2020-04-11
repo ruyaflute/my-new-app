@@ -22,6 +22,7 @@ export default function App() {
   return (
     <View style={styles.screen}>
       <Text style={styles.carePlan}> Care Plan </Text>
+      <Button title="Add New Goal" />
       <GoalInput onAddGoal={addGoalHandler} />
       <FlatList
         keyExtractor={(item, index) => item.id}

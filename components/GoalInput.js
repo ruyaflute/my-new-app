@@ -9,7 +9,7 @@ const GoalInput = props => {
     };
 
     return (
-        <Modal>
+        <Modal visible={false} >
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder="Care Plan Goal"
