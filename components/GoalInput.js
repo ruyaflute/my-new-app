@@ -22,8 +22,10 @@ const GoalInput = props => {
                     onChangeText={goalInputHandler}
                     value={enteredGoal}
                 />
-                <Button title="CANCEL" color = "red" onPress={props.onCancel} />
-                <Button title="ADD" onPress={addGoalHandler} />
+                <View style ={styles.buttonContainer}>
+                    <Button title="CANCEL" color="red" onPress={props.onCancel} />
+                    <Button title="ADD" onPress={addGoalHandler} />
+                </View>
             </View>
         </Modal>
     );
@@ -31,7 +33,7 @@ const GoalInput = props => {
 
 const styles = StyleSheet.create({
     inputContainer: {
-        flex: 1, 
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -42,6 +44,10 @@ const styles = StyleSheet.create({
         padding: 10,
         marginBottom: 10
     },
+    buttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    }
 });
 
 export default GoalInput;
