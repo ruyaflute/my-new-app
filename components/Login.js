@@ -23,4 +23,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#3498db',
   },
+  logoContainer: {
+    alignItems: 'center',
+    flexGrow: 1,
+    justifyContent: 'center',
+  }, 
+  logo: {
+    width: 100,
+    height: 100,
+  },
 });
+
+//https://www.youtube.com/watch?v=1xu1eeRCPEk
