@@ -19,7 +19,8 @@ export default function App() {
     setCourseGoals(currentGoals => {
       return currentGoals.filter((goal) => goal.id !== goalId);
     });
-  }
+  };
+  
 
   return (
     <View style={styles.screen}>
