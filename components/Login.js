@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, Text, TextInput } from 'react-native';
+import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 
 export default class Login extends Component {
   render() {
@@ -25,6 +25,9 @@ export default class Login extends Component {
         placeholderTextColor="rgba(255, 255, 255, 0.7)"
         style={styles.input} />
         
+        <TouchableOpacity style={styles.buttonContainer}>
+        <Text style={styles.buttonText}>LOGIN</Text>
+        </TouchableOpacity>
         </View>
 
 
@@ -62,10 +65,19 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    marginBottom: 20,
+    marginBottom: 10,
     color: '#FFF',
     paddingHorizontal: 10,
-  }
+  },
+  buttonContainer: {
+    backgroundColor: '#2980b9',
+    paddingVertical: 15,
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: '#FFFFFF',
+    fontWeight: '700'
+  },
 });
 
 //https://www.youtube.com/watch?v=1xu1eeRCPEk
