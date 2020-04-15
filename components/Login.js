@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, StatusBar } from 'react-native';
 
 export default class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
+      <StatusBar barStyle="light-content" />
         <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
@@ -21,6 +22,9 @@ export default class Login extends Component {
         placeholderTextColor="rgba(255, 255, 255, 0.7)"
         returnKeyType="next"
         onSubmitEditing={() => this.passwordInput.focus()}
+        keyboardType="emaill-address"
+        autoCapitalize="none"
+        autoCorrect={false}
         style={styles.input} />
         <TextInput 
         placeholder="password"
@@ -34,11 +38,11 @@ export default class Login extends Component {
         <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
           
-          <View style={styles.retrivePassword}> 
+          <TouchableOpacity style={styles.retrivePassword}> 
           <Text style={styles.title}> 
           Dont't remember your password?
           </Text>
-        </View>
+        </TouchableOpacity>
 
         </KeyboardAvoidingView>
 
@@ -97,5 +101,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-//https://www.youtube.com/watch?v=1xu1eeRCPEk
