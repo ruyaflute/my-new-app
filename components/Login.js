@@ -19,12 +19,16 @@ export default class Login extends Component {
         <TextInput 
         placeholder="username or email"
         placeholderTextColor="rgba(255, 255, 255, 0.7)"
+        returnKeyType="next"
+        onSubmitEditing={() => this.passwordInput.focus()}
         style={styles.input} />
         <TextInput 
         placeholder="password"
         placeholderTextColor="rgba(255, 255, 255, 0.7)"
+        returnKeyType="enter"
         secureTextEntry
-        style={styles.input} />
+        style={styles.input} 
+        ref={(input) => this.passwordInput = input}/>
         
         <TouchableOpacity style={styles.buttonContainer}>
         <Text style={styles.buttonText}>LOGIN</Text>
@@ -93,4 +97,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
 //https://www.youtube.com/watch?v=1xu1eeRCPEk
