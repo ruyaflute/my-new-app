@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
 export default class Login extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class Login extends Component {
           </Text>
         </View>
         
-        <View style={styles.loginFormContainer}> 
+        <KeyboardAvoidingView behavior="padding" style={styles.loginFormContainer}> 
         <TextInput 
         placeholder="username or email"
         placeholderTextColor="rgba(255, 255, 255, 0.7)"
@@ -23,12 +23,21 @@ export default class Login extends Component {
         <TextInput 
         placeholder="password"
         placeholderTextColor="rgba(255, 255, 255, 0.7)"
+        secureTextEntry
         style={styles.input} />
         
         <TouchableOpacity style={styles.buttonContainer}>
         <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
+          
+          <View style={styles.retrivePassword}> 
+          <Text style={styles.title}> 
+          Dont't remember your password?
+          </Text>
         </View>
+
+        </KeyboardAvoidingView>
+
 
 
 
@@ -78,6 +87,10 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontWeight: '700'
   },
+  retrivePassword: {
+    alignItems: 'center',
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
 });
-
 //https://www.youtube.com/watch?v=1xu1eeRCPEk
