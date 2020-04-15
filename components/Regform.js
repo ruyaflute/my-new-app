@@ -5,12 +5,12 @@ export default class Regform extends Component {
   render() {
   return (
     <View style={styles.regform}>
-      <Text style={styles.header}>Registration</Text>
+      <Text style={styles.header}>Let's begin. Please fill out the information below so we can pair you with your care team.</Text>
 
       <TextInput style={styles.textinput} placeholder="Your name" 
       underlineColorAndroid={'transparent'} />
 
-      <TextInput style={styles.textinput} placeholder="Your email" 
+      <TextInput style={styles.textinput} placeholder="Your date of birth" 
       underlineColorAndroid={'transparent'} />
 
       <TextInput style={styles.textinput} placeholder="Your password" 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
   },
   header: {
-    fontSize: 24,
+    fontSize: 14,
     color: '#fff',
     paddingBottom: 10,
     marginBottom: 40,
