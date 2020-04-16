@@ -37,6 +37,12 @@ export default class Login extends Component {
         <TouchableOpacity style={styles.buttonContainer}>
         <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity style={styles.retrivePassword}> 
+          <Text style={styles.title}> 
+          Don't have an account? Sign up!
+          </Text>
+        </TouchableOpacity>
           
           <TouchableOpacity style={styles.retrivePassword}> 
           <Text style={styles.title}> 

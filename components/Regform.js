@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
 export default class Regform extends Component {
   render() {
   return (
-    <View style={styles.regform}>
+    <KeyboardAvoidingView style={styles.regform}>
       <Text style={styles.header}>Let's begin. Please fill out the information below so we can pair you with your care team.</Text>
 
       <TextInput style={styles.textinput} placeholder="Your name" 
@@ -16,12 +16,12 @@ export default class Regform extends Component {
       <TextInput style={styles.textinput} placeholder="Your password" 
       secureTextEntry={true}
       underlineColorAndroid={'transparent'} />
-
+      
       <TouchableOpacity style={styles.button} >
       <Text style={styles.btntext}>Sign up </Text>
       </TouchableOpacity>
 
-    </View>
+    </KeyboardAvoidingView>
     );
   }
 }
