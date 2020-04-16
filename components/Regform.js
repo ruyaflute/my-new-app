@@ -4,18 +4,28 @@ import { Text, View, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingVi
 export default class Regform extends Component {
   render() {
   return (
-    <KeyboardAvoidingView style={styles.regform}>
+    <KeyboardAvoidingView behavior="padding" style={styles.regform}>
       <Text style={styles.header}>Let's begin. Please fill out the information below so we can pair you with your care team.</Text>
 
-      <TextInput style={styles.textinput} placeholder="Your name" 
-      underlineColorAndroid={'transparent'} />
+      <TextInput 
+      placeholder="Your name"
+      style={styles.textinput}  
+      underlineColorAndroid={'transparent'} 
+      onSubmitEditing={() => this.yourdob.focus()} />
 
-      <TextInput style={styles.textinput} placeholder="Your date of birth" 
-      underlineColorAndroid={'transparent'} />
+      <TextInput 
+      placeholder="Your date of birth"
+      style={styles.textinput}  
+      underlineColorAndroid={'transparent'} 
+      ref={(input) => this.yourdob = input}
+      onSubmitEditing={() => this.passwordInput.focus()} />
 
-      <TextInput style={styles.textinput} placeholder="Your password" 
+      <TextInput 
+      placeholder="Your password"
+      style={styles.textinput}  
       secureTextEntry={true}
-      underlineColorAndroid={'transparent'} />
+      underlineColorAndroid={'transparent'} 
+      ref={(input) => this.passwordInput = input}/>
       
       <TouchableOpacity style={styles.button} >
       <Text style={styles.btntext}>Sign up </Text>
