@@ -18,6 +18,13 @@ export default class Regform extends Component {
       style={styles.textinput}  
       underlineColorAndroid={'transparent'} 
       ref={(input) => this.yourdob = input}
+      onSubmitEditing={() => this.youremail.focus()} />
+
+      <TextInput 
+      placeholder="Your email"
+      style={styles.textinput}  
+      underlineColorAndroid={'transparent'} 
+      ref={(input) => this.youremail = input}
       onSubmitEditing={() => this.passwordInput.focus()} />
 
       <TextInput 
