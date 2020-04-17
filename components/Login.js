@@ -7,7 +7,7 @@ export default class Login extends Component {
     this.state = {
       formValid: true,
       validEmail: false,
-      emailAddress:'',
+      emailAddress: '',
       validPassword: false,
       loadingVisible: false,
     }
@@ -16,7 +16,7 @@ export default class Login extends Component {
   }
 
   handleCloseNotification() {
-    this.setState({formValid: true });
+    this.setState({ formValid: true });
   }
 
   handleEmailChange(email) {
@@ -26,7 +26,7 @@ export default class Login extends Component {
     if (!this.state.validEmaill) {
       if (emailCheckRegex.test(email)) {
         this.setState({ validEmail: true });
-      } 
+      }
     } else {
       if (!emailCheckRegex.test(email)) {
         this.setState({ validEmail: false });
@@ -37,53 +37,53 @@ export default class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <StatusBar barStyle="light-content" />
+        <StatusBar barStyle="light-content" />
         <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
             source={require('assets/snack-icon.png')}
           />
-          <Text style={styles.title}> 
-          Welcome to CMCC
+          <Text style={styles.title}>
+            Welcome to CMCC
           </Text>
-          <Text style={styles.subtitle}> 
-          The Best Case Management and Care Coordination tool
+          <Text style={styles.subtitle}>
+            The Best Case Management and Care Coordination tool
           </Text>
         </View>
-        
-        <KeyboardAvoidingView behavior="padding" style={styles.loginFormContainer}> 
-        <TextInput 
-        placeholder="username or email"
-        placeholderTextColor="rgba(255, 255, 255, 0.7)"
-        returnKeyType="next"
-        onSubmitEditing={() => this.passwordInput.focus()}
-        keyboardType="emaill-address"
-        autoCapitalize="none"
-        autoCorrect={false}
-        style={styles.input} />
-        <TextInput 
-        placeholder="password"
-        placeholderTextColor="rgba(255, 255, 255, 0.7)"
-        returnKeyType="enter"
-        secureTextEntry
-        style={styles.input} 
-        ref={(input) => this.passwordInput = input}/>
-        
-        <TouchableOpacity style={styles.buttonContainer}>
-        <Text style={styles.buttonText}>LOGIN</Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={styles.retrivePassword}> 
-          <Text style={styles.title}> 
-          Don't have an account? Sign up!
+        <KeyboardAvoidingView behavior="padding" style={styles.loginFormContainer}>
+          <TextInput
+            placeholder="username or email"
+            placeholderTextColor="rgba(255, 255, 255, 0.7)"
+            returnKeyType="next"
+            onSubmitEditing={() => this.passwordInput.focus()}
+            keyboardType="emaill-address"
+            autoCapitalize="none"
+            autoCorrect={false}
+            style={styles.input} />
+          <TextInput
+            placeholder="password"
+            placeholderTextColor="rgba(255, 255, 255, 0.7)"
+            returnKeyType="enter"
+            secureTextEntry
+            style={styles.input}
+            ref={(input) => this.passwordInput = input} />
+
+          <TouchableOpacity style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>LOGIN</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.retrivePassword}>
+            <Text style={styles.title}>
+              Don't have an account? Sign up!
           </Text>
-        </TouchableOpacity>
-          
-          <TouchableOpacity style={styles.retrivePassword}> 
-          <Text style={styles.title}> 
-          Dont't remember your password?
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.retrivePassword}>
+            <Text style={styles.title}>
+              Dont't remember your password?
           </Text>
-        </TouchableOpacity>
+          </TouchableOpacity>
 
         </KeyboardAvoidingView>
 
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#FFF',
-    marginTop: 10, 
+    marginTop: 10,
     width: 160,
     textAlign: 'center',
     opacity: 0.9,
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   },
   loginFormContainer: {
     padding: 20,
-  }, 
+  },
   input: {
     height: 40,
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
