@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, StatusBar } from 'react-native';
 
 export default class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      formValid: true,
+      validEmail: false,
+      emailAddress:'',
+      validPassword: false,
+      loadingVisible: false,
+    }
+    
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -51,8 +63,6 @@ export default class Login extends Component {
         </TouchableOpacity>
 
         </KeyboardAvoidingView>
-
-
 
 
         <View style={styles.formContainer} />
