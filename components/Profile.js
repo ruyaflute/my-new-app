@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, Text, TextInput } from 'react-native';
+import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 
 export default class Profile extends Component {
   render() {
@@ -7,6 +7,33 @@ export default class Profile extends Component {
       <View style={styles.profile}>
       <View style={styles.mainbody}>
       <Image style={styles.imgprofile} source={require('assets/snack-icon.png')} />
+      <Text style={styles.profiletext}>Name
+      </Text>
+      <Text style={styles.profiletext}>DOB 
+      </Text>
+      <Text style={styles.profiletext}>Phone
+      </Text>
+      <Text style={styles.profiletext}>Address 
+      </Text>
+      <Text style={styles.profiletext}>Insurance
+      </Text>
+      <Text style={styles.profiletext}>Coordinator Name
+      </Text>
+      <Text style={styles.profiletext}>Other Demographic
+      </Text>
+
+      <TouchableOpacity style={styles.tabs}> 
+      <Text style={styles.tabstext}> Patient Complaints </Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.tabs}> 
+      <Text style={styles.tabstext}> Case Management/Coordination</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.tabs}>
+      <Text style={styles.tabstext}> Event Announcement</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.tabs}>
+      <Text style={styles.tabstext}> Entitlement Resources</Text>
+      </TouchableOpacity>
       </View>
       </View>
     )
@@ -29,5 +56,21 @@ const styles = StyleSheet.create({
     marginTop: 5,
     height: 120,
     width: 120,
+  },
+  profiletext: {
+    color: '#FFF',
+    marginTop: 5, 
+    width: 160,
+    textAlign: 'left',
+    opacity: 0.9,
+  },
+  tabs: {
+    alignSelf: 'stretch',
+    padding: 10,
+    backgroundColor: '#59cbbd',
+    marginTop: 15,
+  },
+  tabstext: {
+    color: '#fff',
   },
 });
