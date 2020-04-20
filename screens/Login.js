@@ -80,7 +80,7 @@ export default class Login extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.retrivePassword}>
-            <Text style={styles.title}  numberOfLines={1}>
+            <Text style={styles.title2}  numberOfLines={1}>
               Dont't remember your password?
           </Text>
           </TouchableOpacity>
@@ -110,16 +110,16 @@ const styles = StyleSheet.create({
   },
   header: {
     color: '#FFF',
-    marginTop: 10,   
-    fontSize: 20,
+    marginTop: 20,   
+    fontSize: 30,
   },
   subtitle: {
     color: '#FFF',
     marginTop: 10,
-    fontSize: 12,
+    fontSize: 15,
   },
   loginFormContainer: {
-    padding: 20,
+    padding: 25,
   },
   input: {
     height: 40,
@@ -146,10 +146,17 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#FFF',
-    marginTop: 10,
+    marginTop: 20,
     width: 400,
     textAlign: 'center',
     opacity: 0.9,
-    
+  },
+  title2: {
+    color: '#FFF',
+    marginTop: 2,
+    width: 400,
+    textAlign: 'center',
+    opacity: 0.9,
+    paddingBottom: 30,
   },
 });
