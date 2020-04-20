@@ -41,7 +41,7 @@ export default class Login extends Component {
         <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
-            source={require('assets/snack-icon.png')}
+            source={require('./assets/snack-icon.png')}
           />
           <Text style={styles.header}>
             Welcome to CMCC
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexGrow: 1,
     justifyContent: 'center',
+    paddingBottom: 15,
   },
   title: {
     color: '#FFF',
@@ -149,5 +150,6 @@ const styles = StyleSheet.create({
     width: 400,
     textAlign: 'center',
     opacity: 0.9,
+    
   },
 });
