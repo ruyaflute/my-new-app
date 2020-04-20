@@ -43,7 +43,7 @@ export default class Login extends Component {
             style={styles.logo}
             source={require('assets/snack-icon.png')}
           />
-          <Text style={styles.title}>
+          <Text style={styles.header}>
             Welcome to CMCC
           </Text>
           <Text style={styles.subtitle}>
@@ -74,13 +74,13 @@ export default class Login extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.retrivePassword}>
-            <Text style={styles.title}>
+            <Text style={styles.title} numberOfLines={1}>
               Don't have an account? Sign up!
           </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.retrivePassword}>
-            <Text style={styles.title}>
+            <Text style={styles.title}  numberOfLines={1}>
               Dont't remember your password?
           </Text>
           </TouchableOpacity>
@@ -108,12 +108,10 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  title: {
+  header: {
     color: '#FFF',
-    marginTop: 10,
-    width: 160,
-    textAlign: 'center',
-    opacity: 0.9,
+    marginTop: 10,   
+    fontSize: 20,
   },
   subtitle: {
     color: '#FFF',
@@ -140,8 +138,16 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   retrivePassword: {
+    textDecorationLine: 'underline',
     alignItems: 'center',
     flexGrow: 1,
     justifyContent: 'center',
+  },
+  title: {
+    color: '#FFF',
+    marginTop: 10,
+    width: 400,
+    textAlign: 'center',
+    opacity: 0.9,
   },
 });
