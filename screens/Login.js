@@ -41,7 +41,7 @@ export default class Login extends Component {
         <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
-            source={require('./assets/snack-icon.png')}
+            source={require('../assets/snack-icon.png')}
           />
           <Text style={styles.header}>
             Welcome to CMCC
