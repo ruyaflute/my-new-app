@@ -69,17 +69,23 @@ export default class Login extends Component {
             style={styles.input}
             ref={(input) => this.passwordInput = input} />
 
-          <TouchableOpacity style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.buttonContainer}
+          onPress={() => alert("Login Works")}
+          >
             <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.retrivePassword}>
+          <TouchableOpacity style={styles.retrivePassword}
+          onPress={() => alert("Sign Up Works")}
+          >
             <Text style={styles.title} numberOfLines={1}>
               Don't have an account? Sign up!
           </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.retrivePassword}>
+          <TouchableOpacity style={styles.retrivePassword}
+          onPress={() => alert("Forget password?")}
+          >
             <Text style={styles.title2}  numberOfLines={1}>
               Dont't remember your password?
           </Text>
