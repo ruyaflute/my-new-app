@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, StatusBar } from 'react-native';
 
+const userInfo = {userInfo: 'admin', password: 'pass12345'}
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      username: '',
+      password: '',
+
       formValid: true,
       validEmail: false,
       emailAddress: '',
@@ -60,17 +65,25 @@ export default class Login extends Component {
             keyboardType="emaill-address"
             autoCapitalize="none"
             autoCorrect={false}
+
+            onChangeText={(username)=>this.setState({username})}
+            value={this.state.username}
+
             style={styles.input} />
           <TextInput
             placeholder="password"
             placeholderTextColor="rgba(255, 255, 255, 0.7)"
             returnKeyType="enter"
             secureTextEntry
+
+            onChangeText={(password)=>this.setState({password})}
+            value={this.state.password}
+
             style={styles.input}
             ref={(input) => this.passwordInput = input} />
 
           <TouchableOpacity style={styles.buttonContainer}
-          onPress={() => alert("Login Works")}
+          onPress={this._login}
           >
             <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
@@ -97,6 +110,14 @@ export default class Login extends Component {
         <View style={styles.formContainer} />
       </View>
     );
+  }
+ 
+  _login = async() => {
+    if (userInfo.username === this.state.username && userInfo.password === this.state.password) {
+      alert('Logged In');
+    } else {
+      alert('Username or Password is incorrect.');
+    }
   }
 }
 
