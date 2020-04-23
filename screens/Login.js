@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, StatusBar } from 'react-native';
 
-const userInfo = {userInfo: 'admin', password: 'pass12345'}
+const userInfo = {username: 'admin', password: 'pass12345'}
 
 export default class Login extends Component {
   constructor(props) {
