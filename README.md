@@ -17,10 +17,19 @@
 - Dependency: https://reactnavigation.org/docs/getting-started/  npx pod-install ios - not working - need clarity
 - Navigation:  https://reactnative.dev/docs/navigation
 - Bottom Tab/Top Tab: https://reactnavigation.org/docs/bottom-tab-navigator/  https://reactnavigation.org/docs/material-top-tab-navigator/
-- Design: Bottom Tabs - Clients; Profile (Drawerer-Notification?); Setting  - need clarity
-- Design: Top Tabs? - with patient profile(phone address) on top - Case Management and Care Coordination (entered by CM); Assessment-medical and mental health assessment, Entitlement issues, Care Plan, Appointment and ER appointment(entered by patient at this point), provider information and phone/video call, task set up for other CM)
-- Where do these go to? How do they relate to Top tabs above? Pt Complaints;Event Announcement;Entitlement resources.
+- Design: Bottom Tabs/Drawer - Clients; Profile?; Setting; Notification - need clarity
+- Design: Bottom/Top Tabs - Pt Complaints; Event Announcement; Entitlement resources (Most important for CM)
+- Design: Tabs? or FlatList?- with patient profile(phone address) on top - Case Management and Care Coordination (entered by CM); Assessment-medical and mental health assessment, Entitlement issues, Care Plan, Appointment and ER appointment(entered by patient at this point), provider information and phone/video call, task set up for other CM)
 - Folders need to be reorganized: separate Screens and tabs
+- Screen: * Clients; Profile?; Setting; Notification
+  - Tabs: profile?; 
+  - Tabs: Setting; 
+  - Tabs: Notification
+- Screen: Pt Profile with Tabs? or FlatList? above..
+  - Complaints
+  - Event
+  - Resources
+- Need to think about CM profile, setting, notification, blahhhhh
 - Interets: HIPPA secure message? among who? CM/Clients. If message, then search for college/clients
 
 
