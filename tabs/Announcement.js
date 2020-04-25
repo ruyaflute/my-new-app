@@ -5,7 +5,7 @@ class Announcement extends Component {
     render() {
         return (
             <View style={styles.center}>
-                <Text style={styles.title}>Detail Screen</Text>
+                <Text style={styles.title}>Announcement</Text>
                 <Button
                 title='View Bottom Tabs'
                 onPress={() => this.props.navigation.navigate('Bottom Tabs')}
