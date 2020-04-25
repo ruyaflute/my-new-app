@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity, Button } from 'react-native';
 
 export default class Profile extends Component {
     render() {
         return (
             <View style={styles.profile}>
                 <View style={styles.mainbody}>
-                    <Image style={styles.imgprofile} source={require('assets/snack-icon.png')} />
-                    <Text style={styles.profiletext}>Notes
-      </Text>
-                    <Text style={styles.profiletext}>Name
-      </Text>
-                    <Text style={styles.profiletext}>DOB
-      </Text>
-                    <Text style={styles.profiletext}>Phone
-      </Text>
-                    <Text style={styles.profiletext}>Address
-      </Text>
-                    <Text style={styles.profiletext}>Insurance
-      </Text>
-                    <Text style={styles.profiletext}>Coordinator Name
-      </Text>
+                    <Image style={styles.imgprofile} source={require('../assets/snack-icon.png')} />
+                    <Text style={styles.profiletext}>Notes</Text>
+                    <Text style={styles.profiletext}>Name</Text>
+                    <Text style={styles.profiletext}>DOB</Text>
+                    <Text style={styles.profiletext}>Phone</Text>
+                    <Text style={styles.profiletext}>Address</Text>
+                    <Text style={styles.profiletext}>Insurance</Text>
+                    <Text style={styles.profiletext}>Coordinator Name</Text>
 
                     <TouchableOpacity style={styles.tabs}>
                         <Text style={styles.tabstext}> Other Demographic </Text>
@@ -37,6 +30,10 @@ export default class Profile extends Component {
                     <TouchableOpacity style={styles.tabs}>
                         <Text style={styles.tabstext}> Entitlement Resources</Text>
                     </TouchableOpacity>
+                    <Button
+                        title='Bottom Tabs'
+                        onPress={() => this.props.navigation.navigate('Bottom Tabs')}
+                    />
                 </View>
             </View>
         )
@@ -46,10 +43,10 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
     profile: {
         flex: 1,
-        backgroundColor: '#36485f',
+        backgroundColor: '#36485f',       
     },
     mainbody: {
-        marginTop: 30,
+        marginTop: 50,
         marginLeft: 24,
         marginRight: 24,
         marginBottom: 70,
