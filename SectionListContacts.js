@@ -1,16 +1,10 @@
 import React from 'react'
-import {SectionList, Text, View} from 'react-native'
+import {SectionList, Text} from 'react-native'
 import PropTypes from 'prop-types'
 
+import Row from './Row'
 
-
-const Row = props => (
-  <View style={styles.row}>
-    <Text>{props.name}</Text>
-    <Text>{props.phone}</Text>
-  </View>
-)
-const renderItem = () => <Row />
+const renderItem = ({item}) => <Row {...item} />
 
 const renderSectionHeader = ({section}) => <Text>{section.title}</Text>
 

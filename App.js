@@ -1,45 +1,20 @@
-//import 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 
-import React, { Component } from 'react';
-import { Button, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Constants from 'expo-constants';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import MainTabScreen from './screens/MainTabScreen'
 
-//import Clients from './screens/Clients'
-import contacts, {compareNames} from './contacts'
-import SectionListContacts from './SectionListContacts'
-import ScrollViewContacts from './ScrollViewContacts'
-import FlatListContacts from './FlatListContacts'
-import AddContactForm from './AddContactForm'
 
-export default class App extends Component {
-  state = {
-    showContacts: true,
-    showForm: false,
-    contacts: contacts,
-  }
-  sort = () => {
-    this.setState(prevState => ({ contacts: prevState.contact.sort(compareNames) }))
-  }
+const Drawer = createDrawerNavigator();
 
-  showForm = () => {
-    this.setState({ showForm: true })
-  }
-  render() {
-    if (this.state.showForm) return <AddContactForm />
-    return (
-      <View style={styles.container}>
-        <Button title="add contact" onPRess={this.showForm} />
-        {this.state.showContacts && <SectionListContacts contacts={this.state.contacts} />}
-      </View>
-      
-    );
-  }
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={MainTabScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  )
 }
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#36485f',
-  }
-}); 
+export default App;
