@@ -8,11 +8,11 @@ export default class Profile extends Component {
                 <View style={styles.mainbody}>
                     <Image style={styles.imgprofile} source={require('../assets/snack-icon.png')} />
                     <Text style={styles.profiletext}>Notes: </Text>
-                    <Text style={styles.profiletext}>Name</Text>
-                    <Text style={styles.profiletext}>DOB</Text>
-                    <Text style={styles.profiletext}>Phone</Text>
-                    <Text style={styles.profiletext}>Address</Text>
-                    <Text style={styles.profiletext}>Insurance</Text>
+                    <Text style={styles.profiletext}>Name: </Text>
+                    <Text style={styles.profiletext}>DOB: </Text>
+                    <Text style={styles.profiletext}>Phone: </Text>
+                    <Text style={styles.profiletext}>Address: </Text>
+                    <Text style={styles.profiletext}>Insurance: </Text>
 
                     <TouchableOpacity style={styles.tabs}>
                         <Text style={styles.tabstext}> Other Demographic </Text>
@@ -31,7 +31,7 @@ export default class Profile extends Component {
                     </TouchableOpacity>
                     <Button
                         title='Bottom Tabs'
-                        onPress={() => this.props.navigation.navigate('Bottom Tabs')}
+                        onPress={() => this.props.navigation.navigate('Clients')}
                     />
                 </View>
             </View>
