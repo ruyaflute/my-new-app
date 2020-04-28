@@ -1182,10 +1182,10 @@
     react-is "^16.13.0"
     use-subscription "^1.4.0"
 
-"@react-navigation/material-bottom-tabs@^5.1.9":
-  version "5.1.9"
-  resolved "https://registry.yarnpkg.com/@react-navigation/material-bottom-tabs/-/material-bottom-tabs-5.1.9.tgz#e309ce9e2612a99423be4c036e8871c8563bcd8d"
-  integrity sha512-rXvKltzZ2M/0fHwJbL+HH54QvA1dkS4exy+gIcAb7wJ7pUVqhVTTQYNhPDNRU2M4n90irRg2LuvnWpR+CSH1gg==
+"@react-navigation/material-bottom-tabs@^5.1.10":
+  version "5.1.10"
+  resolved "https://registry.yarnpkg.com/@react-navigation/material-bottom-tabs/-/material-bottom-tabs-5.1.10.tgz#3374ef1806054ff94189f7337976a1b716e01812"
+  integrity sha512-CFDnzK9ia0Fw2o9EBviIIZhOil8Rlr0F/rESPyCpFjqGSssjdQ5u7szUzy7UoxXo4VecYpYmntAA/zqHoy4zRw==
 
 "@react-navigation/material-top-tabs@^5.1.9":
   version "5.1.9"

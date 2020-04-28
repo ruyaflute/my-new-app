@@ -7,13 +7,12 @@ export default class Profile extends Component {
             <View style={styles.profile}>
                 <View style={styles.mainbody}>
                     <Image style={styles.imgprofile} source={require('../assets/snack-icon.png')} />
-                    <Text style={styles.profiletext}>Notes</Text>
+                    <Text style={styles.profiletext}>Notes: </Text>
                     <Text style={styles.profiletext}>Name</Text>
                     <Text style={styles.profiletext}>DOB</Text>
                     <Text style={styles.profiletext}>Phone</Text>
                     <Text style={styles.profiletext}>Address</Text>
                     <Text style={styles.profiletext}>Insurance</Text>
-                    <Text style={styles.profiletext}>Coordinator Name</Text>
 
                     <TouchableOpacity style={styles.tabs}>
                         <Text style={styles.tabstext}> Other Demographic </Text>
@@ -43,7 +42,7 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
     profile: {
         flex: 1,
-        backgroundColor: '#36485f',       
+        backgroundColor: 'white',       
     },
     mainbody: {
         marginTop: 50,
@@ -58,11 +57,13 @@ const styles = StyleSheet.create({
         width: 120,
     },
     profiletext: {
-        color: '#FFF',
-        marginTop: 5,
+        color: 'black',
+        marginTop: 10,
         width: 160,
         textAlign: 'left',
         opacity: 0.9,
+        fontWeight: 'bold',
+        fontSize: 20,
     },
     tabs: {
         alignSelf: 'stretch',
