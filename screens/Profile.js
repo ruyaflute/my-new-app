@@ -29,10 +29,7 @@ export default class Profile extends Component {
                     <TouchableOpacity style={styles.tabs}>
                         <Text style={styles.tabstext}> Entitlement Resources</Text>
                     </TouchableOpacity>
-                    <Button
-                        title='Bottom Tabs'
-                        onPress={() => this.props.navigation.navigate('Bottom Tabs')}
-                    />
+                
                 </View>
             </View>
         )

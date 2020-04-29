@@ -11,7 +11,7 @@ export default class Clients extends Component {
                 <View>
                     <Button
                         title='View client Profile 1'
-                        onPress={() => this.props.navigation.navigate('Profile')}
+                        onPress={() => this.props.navigation.navigate('View client Profile 1')}
                     />
                 </View>
             </View>
@@ -22,7 +22,7 @@ export default class Clients extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#36485f',
+        backgroundColor: 'white',
     },
     header: {
         backgroundColor: '#59cbbd',
