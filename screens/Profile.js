@@ -31,7 +31,7 @@ export default class Profile extends Component {
                     </TouchableOpacity>
                     <Button
                         title='Bottom Tabs'
-                        onPress={() => this.props.navigation.navigate('Clients')}
+                        onPress={() => this.props.navigation.navigate('Bottom Tabs')}
                     />
                 </View>
             </View>
