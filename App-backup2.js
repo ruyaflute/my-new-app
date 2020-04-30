@@ -1,4 +1,4 @@
-import 'react-native-gesture-handler';
+//Text screens
 
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
@@ -20,160 +20,9 @@ const styles = StyleSheet.create({
   }
 }); 
 
-----------
-import 'react-native-gesture-handler';
-import React, { Component } from 'react';
-
-import Clients from './screens/Clients';
-import Profile from './screens/Profile';
-
-import Complaints from './tabs/Complaints'
-import Announcement from './tabs/Announcement'
-import Resources from './tabs/Resources'
-
-import { NavigationContainer } from '@react-navigation/native';
-import {createStackNavigator} from '@react-nativation/stack';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-
-
-const MaterialBottomTabs = createMaterialBottomTabNavigator();
-const Stack = createStackNavigator();
-
-
-export default class App extends Component {
-
-  render() {
-
-    //createHomeStack = () =>
-
-
-    createBottomTabs = () => {
-      return <MaterialBottomTabs.Navigator>
-        <MaterialBottomTabs.Screen name="Complaints" component={Complaints} />
-        <MaterialBottomTabs.Screen name="Announcement" component={Announcement} />
-        <MaterialBottomTabs.Screen name="Resources" component={Resources} />
-      </MaterialBottomTabs.Navigator>
-    }
-
-    return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Clients" component={Clients} />
-          <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Bottom Tabs" children={createBottomTabs} />
-        </Stack.Navigator>
-      </NavigationContainer>
-
-      /* 
-        <Drawer.Navigator>
-          <Drawer.Screen name="Home" children={createHomeStack} />
-
-        </Drawer.Navigator>
-       */
-    );
-  }
-}
-------
-//import 'react-native-gesture-handler';
-
-import React, { Component } from 'react';
-import { Button, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Constants from 'expo-constants';
-
-//import Clients from './screens/Clients'
-import contacts, {compareNames} from './contacts'
-import SectionListContacts from './SectionListContacts'
-import ScrollViewContacts from './ScrollViewContacts'
-import FlatListContacts from './FlatListContacts'
-import AddContactForm from './AddContactForm'
-
-export default class App extends Component {
-  state = {
-    showContacts: true,
-    showForm: false,
-    contacts: contacts,
-  }
-  sort = () => {
-    this.setState(prevState => ({ contacts: prevState.contact.sort(compareNames) }))
-  }
-
-  showForm = () => {
-    this.setState({ showForm: true })
-  }
-  render() {
-    if (this.state.showForm) return <AddContactForm />
-    return (
-      <View style={styles.container}>
-        <Button title="add contact" onPRess={this.showForm} />
-        {this.state.showContacts && <SectionListContacts contacts={this.state.contacts} />}
-      </View>
-      
-    );
-  }
-}
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#36485f',
-  }
-}); 
------
-import 'react-native-gesture-handler';
-import React, { Component } from 'react';
-
-import Clients from './screens/Clients';
-import Profile from './screens/Profile';
-
-import Complaints from './tabs/Complaints'
-import Announcement from './tabs/Announcement'
-import Resources from './tabs/Resources'
-
-import { NavigationContainer } from '@react-navigation/native';
-//import {createStackNavigator} from '@react-nativation/stack';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-
-
-const MaterialBottomTabs = createMaterialBottomTabNavigator();
-const Stack = createStackNavigator();
-
-
-export default class App extends Component {
-
-  render() {
-
-    //createHomeStack = () =>
-
-
-    createBottomTabs = () => {
-      return <MaterialBottomTabs.Navigator>
-        <MaterialBottomTabs.Screen name="Complaints" component={Complaints} />
-        <MaterialBottomTabs.Screen name="Announcement" component={Announcement} />
-        <MaterialBottomTabs.Screen name="Resources" component={Resources} />
-      </MaterialBottomTabs.Navigator>
-    }
-
-    return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Clients" component={Clients} />
-          <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Bottom Tabs" children={createBottomTabs} />
-        </Stack.Navigator>
-      </NavigationContainer>
-
-      /* 
-        <Drawer.Navigator>
-          <Drawer.Screen name="Home" children={createHomeStack} />
-
-        </Drawer.Navigator>
-       */
-    );
-  }
-}
 
 -----
+//Navigation practice
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -191,6 +40,91 @@ const App = () => {
       </Drawer.Navigator>
     </NavigationContainer>
   )
+}
+
+export default App;
+
+
+----------
+//Navigation worked
+import * as React from 'react';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// https://oblador.github.io/react-native-vector-icons/
+
+import Login from './screens/Login'
+import Clients from './screens/Clients'
+import Profile from './screens/Profile'
+
+import Complaints from './tabs/Complaints'
+import Announcement from './tabs/Announcement'
+import Resources from './tabs/Resources'
+
+const Stack = createStackNavigator();
+const MaterialBottomTabs = createMaterialBottomTabNavigator();
+
+function App() {
+
+  createBottomTabs = () => {
+    return <MaterialBottomTabs.Navigator>
+      <MaterialBottomTabs.Screen
+        name="Profile"
+        style={{ marginBottom: 16 }}
+        component={Profile}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: () => (
+            <Icon style={[{ color: 'white' }]} size={25} name={'human'} />
+          ),
+        }}
+      />
+
+      <MaterialBottomTabs.Screen
+        name="Complaints"
+        style={{ marginBottom: 16 }}
+        component={Complaints}
+        options={{
+          tabBarLabel: 'Complaints',
+          tabBarIcon: () => (
+            <Icon style={[{ color: 'white' }]} size={25} name={'home'} />
+          ),
+        }}
+      />
+      <MaterialBottomTabs.Screen
+        name="Announcement"
+        component={Announcement}
+        options={{
+          tabBarLabel: 'Announcement',
+          tabBarIcon: () => (
+            <Icon style={[{ color: 'white' }]} size={25} name={'human'} />
+          )
+        }}
+      />
+      <MaterialBottomTabs.Screen
+        name="Resources"
+        component={Resources}
+        options={{
+          tabBarLabel: 'Resources',
+          tabBarIcon: () => (
+            <Icon style={[{ color: 'white' }]} size={25} name={'map'} />
+          ),
+        }}
+      />
+    </MaterialBottomTabs.Navigator>
+  }
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Clients" component={Clients} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="View client Profile 1" children={this.createBottomTabs} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 export default App;

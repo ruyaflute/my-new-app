@@ -1,3 +1,4 @@
+//Add goal
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 

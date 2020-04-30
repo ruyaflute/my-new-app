@@ -1,81 +1,44 @@
-import * as React from 'react';
+import React from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import Constants from 'expo-constants';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import contacts, {compareNames} from './contacts'
 
-import Login from './screens/Login'
-import Clients from './screens/Clients'
-import Profile from './screens/Profile'
+import SectionListContacts from './SectionListContacts'
+import AddContactForm from './AddContactForm'
 
-import Complaints from './tabs/Complaints'
-import Announcement from './tabs/Announcement'
-import Resources from './tabs/Resources'
-
-const Stack = createStackNavigator();
-const MaterialBottomTabs = createMaterialBottomTabNavigator();
-
-function App() {
-
-  createBottomTabs = () => {
-    return <MaterialBottomTabs.Navigator>
-      <MaterialBottomTabs.Screen
-        name="Profile"
-        style={{ marginBottom: 16 }}
-        component={Profile}
-        options={{
-          tabBarLabel: 'Profile',
-          tabBarIcon: () => (
-            <Icon style={[{ color: 'white' }]} size={25} name={'human'} />
-          ),
-        }}
-      />
-
-      <MaterialBottomTabs.Screen
-        name="Complaints"
-        style={{ marginBottom: 16 }}
-        component={Complaints}
-        options={{
-          tabBarLabel: 'Complaints',
-          tabBarIcon: () => (
-            <Icon style={[{ color: 'white' }]} size={25} name={'home'} />
-          ),
-        }}
-      />
-      <MaterialBottomTabs.Screen
-        name="Announcement"
-        component={Announcement}
-        options={{
-          tabBarLabel: 'Announcement',
-          tabBarIcon: () => (
-            <Icon style={[{ color: 'white' }]} size={25} name={'human'} />
-          )
-        }}
-      />
-      <MaterialBottomTabs.Screen
-        name="Resources"
-        component={Resources}
-        options={{
-          tabBarLabel: 'Resources',
-          tabBarIcon: () => (
-            <Icon style={[{ color: 'white' }]} size={25} name={'map'} />
-          ),
-        }}
-      />
-    </MaterialBottomTabs.Navigator>
+export default class App extends React.Component {
+  state = {
+    showContacts: true,
+    showForm: false,
+    contacts: contacts,
   }
 
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Clients" component={Clients} />
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="View client Profile 1" children={this.createBottomTabs} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+
+  sort = () => {
+    this.setState(prevState => ({contacts: prevState.contacts.sort(compareNames)}))
+  }
+
+  showForm = () => {
+    this.setState({showForm: true})
+  }
+
+  render() {
+    if (this.state.showForm) return <AddContactForm />
+    return (
+      <View style={styles.container}>
+        <Button title="add contact" onPress={this.showForm} />
+        {this.state.showContacts && <SectionListContacts contacts={this.state.contacts} />}
+      </View>
+    );
+  }
 }
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingTop: Constants.statusBarHeight,
+  },
+});
+
