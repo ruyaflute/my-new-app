@@ -1,44 +1,23 @@
-import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import Constants from 'expo-constants';
+//Text screens
 
-import contacts, {compareNames} from './contacts'
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 
-import SectionListContacts from './SectionListContacts'
-import AddContactForm from './AddContactForm'
+import Profile from './screens/Profile'
+import Login from './screens/Login';
 
-export default class App extends React.Component {
-  state = {
-    showContacts: true,
-    showForm: false,
-    contacts: contacts,
-  }
-
-
-  sort = () => {
-    this.setState(prevState => ({contacts: prevState.contacts.sort(compareNames)}))
-  }
-
-  showForm = () => {
-    this.setState({showForm: true})
-  }
-
-  render() {
-    if (this.state.showForm) return <AddContactForm />
-    return (
-      <View style={styles.container}>
-        <Button title="add contact" onPress={this.showForm} />
-        {this.state.showContacts && <SectionListContacts contacts={this.state.contacts} />}
-      </View>
-    );
-  }
+const App = () => {
+  return (
+    <Login />
+  );
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: Constants.statusBarHeight,
-  },
-});
+    backgroundColor: '#36485f',
+  }
+}); 
 

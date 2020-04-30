@@ -128,3 +128,64 @@ function App() {
 }
 
 export default App;
+
+--------
+//Clinet list
+import React from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import Constants from 'expo-constants';
+
+import contacts, { compareNames } from './contacts'
+
+import SectionListContacts from './SectionListContacts'
+import AddContactForm from './AddContactForm'
+
+export default class App extends React.Component {
+  state = {
+    showContacts: true,
+    showForm: false,
+    contacts: contacts,
+  }
+
+
+  sort = () => {
+    this.setState(prevState => ({ contacts: prevState.contacts.sort(compareNames) }))
+  }
+
+  showForm = () => {
+    this.setState({ showForm: true })
+  }
+
+  render() {
+    if (this.state.showForm) return <AddContactForm />
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Clients</Text>
+        </View>
+        <Button title="add contact" onPress={this.showForm} />
+        {this.state.showContacts && <SectionListContacts contacts={this.state.contacts} />}
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  header: {
+    backgroundColor: '#59cbbd',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  headerText: {
+    color: '#FFFFFF',
+    fontSize: 25,
+    padding: 26,
+    fontWeight: '700',
+    paddingTop: 50,
+    paddingBottom: 20,
+  }
+});

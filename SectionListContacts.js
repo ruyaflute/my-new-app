@@ -33,23 +33,3 @@ SectionListContacts.propTypes = {
 
 
 export default SectionListContacts
-
-const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      backgroundColor: 'white',
-  },
-  header: {
-      backgroundColor: '#59cbbd',
-      alignItems: 'center',
-      justifyContent: 'center',
-  },
-  headerText: {
-      color: '#FFFFFF',
-      fontSize: 25,
-      padding: 26,
-      fontWeight: '700',
-      paddingTop: 50,
-      paddingBottom: 20,
-  }
-});

@@ -4,6 +4,7 @@ import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity, KeyboardAvo
 const userInfo = {username: 'admin', password: 'pass12345'}
 
 export default class Login extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -38,8 +39,10 @@ export default class Login extends Component {
       }
     }
   }
+  
 
   render() {
+    
     return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
@@ -89,7 +92,7 @@ export default class Login extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.retrivePassword}
-          onPress={() => alert("Sign Up Works")}
+          onPress={() => navigation.navigate('Regform')}
           >
             <Text style={styles.title} numberOfLines={1}>
               Don't have an account? Sign up!
@@ -119,7 +122,9 @@ export default class Login extends Component {
       alert('Username or Password is incorrect.');
     }
   }
+  
 }
+
 
 const styles = StyleSheet.create({
   container: {
