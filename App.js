@@ -5,10 +5,11 @@ import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 
 import Profile from './screens/Profile'
 import Login from './screens/Login';
+import Regform from './screens/Regform';
 
 const App = () => {
   return (
-    <Login />
+    <Regform />
   );
 }
 
@@ -19,5 +20,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#36485f',
   }
-}); 
+});
 

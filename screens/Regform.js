@@ -1,47 +1,49 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
-export default class Regform extends Component {
-    render() {
+
+const Regform = ({navigation}) => {
         return (
             <KeyboardAvoidingView behavior="padding" style={styles.regform}>
-                <Text style={styles.header}>Let's begin. Please fill out the information below so we can pair you with your care team.</Text>
+                <Text style={styles.welcome}> Welcome! </Text>
+                <Text style={styles.header}>Let's begin. Please fill out the information below.</Text>
 
                 <TextInput
                     placeholder="Your name"
                     style={styles.textinput}
                     underlineColorAndroid={'transparent'}
-                    onSubmitEditing={() => this.yourdob.focus()} />
+                    onSubmitEditing={() => React.yourdob.focus()} />
 
                 <TextInput
                     placeholder="Your date of birth"
                     style={styles.textinput}
                     underlineColorAndroid={'transparent'}
-                    ref={(input) => this.yourdob = input}
-                    onSubmitEditing={() => this.youremail.focus()} />
+                    ref={(input) => React.yourdob = input}
+                    onSubmitEditing={() => React.youremail.focus()} />
 
                 <TextInput
                     placeholder="Your email"
                     style={styles.textinput}
                     underlineColorAndroid={'transparent'}
-                    ref={(input) => this.youremail = input}
-                    onSubmitEditing={() => this.passwordInput.focus()} />
+                    ref={(input) => React.youremail = input}
+                    onSubmitEditing={() => React.passwordInput.focus()} />
 
                 <TextInput
                     placeholder="Your password"
                     style={styles.textinput}
                     secureTextEntry={true}
                     underlineColorAndroid={'transparent'}
-                    ref={(input) => this.passwordInput = input} />
+                    ref={(input) => React.passwordInput = input} />
 
-                <TouchableOpacity style={styles.button} >
+                <TouchableOpacity style={styles.button} 
+                onPress={() => navigation.navigate('Login')} >
                     <Text style={styles.btntext}>Sign up </Text>
                 </TouchableOpacity>
 
             </KeyboardAvoidingView>
         );
     }
-}
+export default Regform;
 
 const styles = StyleSheet.create({
     regform: {
@@ -51,6 +53,12 @@ const styles = StyleSheet.create({
         paddingLeft: 60,
         paddingRight: 60,
         alignSelf: 'stretch',
+    },
+    welcome: {
+        fontSize: 30,
+        color: '#fff',
+        marginBottom: 30,
+        borderBottomColor: '#199187',
     },
     header: {
         fontSize: 14,

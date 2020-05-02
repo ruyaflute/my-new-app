@@ -39,10 +39,8 @@ export default class Login extends Component {
       }
     }
   }
-  
 
   render() {
-    
     return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
@@ -122,9 +120,7 @@ export default class Login extends Component {
       alert('Username or Password is incorrect.');
     }
   }
-  
 }
-
 
 const styles = StyleSheet.create({
   container: {
