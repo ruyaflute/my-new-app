@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import React from 'react';
+import { Text, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
-
-const Regform = ({navigation}) => {
+function Regform ({navigation}) {
         return (
             <KeyboardAvoidingView behavior="padding" style={styles.regform}>
                 <Text style={styles.welcome}> Welcome! </Text>
